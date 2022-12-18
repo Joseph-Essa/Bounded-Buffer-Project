@@ -1,11 +1,10 @@
 package Producer_Consumer;
 
-import java.util.LinkedList;
+
 import Producer_Consumer.buffer;
 import Semaphore.Mysemaphore;
 import java.lang.Thread.State;
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
+
 
 
 /**
@@ -14,31 +13,37 @@ import java.lang.management.ThreadMXBean;
  */
 
 public class consumer_producer  {
-//       Mysemaphore sem =new  Mysemaphore(); 
+
        buffer buf=new buffer(10);
        
        public int Max_tik_num ;
        public int Avilable_tik ;
        public int produced_tik=0;
        public int tik_count=0;
-       
-       
        public int consumed_tik = 0;
+       
+       /////////calculate time variables//////
        long start;
        long end=0 ;
        boolean Switch=true;
+       
+       //////////interrupt threads////////
        public boolean Ctrl_1=true;
        public boolean Ctrl_2=true;
        public boolean Ctrl_3=true;
        public boolean Ctrl_4=true;
        public boolean Ctrl_5=true;
        public boolean Ctrl_6=true;
+       
+       ///////////consumer tickits counter/////////
        public int c1=0;
        public int c2=0;
        public int c3=0;
        public int c4=0;
        public int c5=0;
        public int c6=0;
+       
+       /////////threads state//////
        public String mess;
        public String mess2;
        public String mess3;
@@ -46,8 +51,6 @@ public class consumer_producer  {
        public String mess5;
        public String mess6;
        public String mess7;
-       public String mess8;
-       
        public String name;
        public String t1= "Thread-3";
        public String t2= "Thread-4";
@@ -55,6 +58,7 @@ public class consumer_producer  {
        public String t4= "Thread-6";
        public String t5= "Thread-7";
        public String t6= "Thread-8";
+       
 //       State NEW;
 //       State RUNNABLE;
 //       State BLOCKED;
@@ -64,8 +68,6 @@ public class consumer_producer  {
         
 
 
-
-   
 /////////////////////*Constructors*///////////////////////
 	public consumer_producer()// Default Constructor
 	{
@@ -96,6 +98,7 @@ public class consumer_producer  {
 	}
         
 
+       
 ///////////////////////*Producer function*///////////////////////
 	public void producerr() throws InterruptedException {
 		
@@ -130,16 +133,14 @@ public class consumer_producer  {
         
         
 public void consumerr() throws InterruptedException {
-                            
-                            
+                                            
 		while (true) {
-                    
-                    
+                          
 	synchronized (this) {
             
-            Thread.sleep(50);
-            
-                                            
+
+               Thread.sleep(50);
+                                          
 		while (buf.size() == 0 ) {
 //                 System.out.println("Tickets will be available soon please try again later ...");
 			wait();
@@ -195,8 +196,7 @@ public boolean checkBook(int num) {
               int numm=num;
               numm++;
               mess7="There Is Available Tickets";
-//       System.out.println("tickeit number : "+ numm +" booked successfully  " );
-                   
+//       System.out.println("tickeit number : "+ numm +" booked successfully  " );  
                    tik_count++;
                    Avilable_tik--;
                    isBooked = true;                                 
@@ -219,7 +219,6 @@ public void check_state(String s) throws InterruptedException{
                       {
                   if(!Ctrl_1){
                
-                    Ctrl_1=true;
                     Thread.currentThread().interrupt();
                     
                     
@@ -237,9 +236,7 @@ public void check_state(String s) throws InterruptedException{
                       
                       else if(s.equals(t2)){
                           
-                          
                           if(!Ctrl_2){
-                              Ctrl_2=true;
                     Thread.currentThread().interrupt();          
                     
                           }
@@ -256,9 +253,7 @@ public void check_state(String s) throws InterruptedException{
 
                       else if(s.equals(t3)){
                       
-                          if(!Ctrl_3){
-                              
-                     Ctrl_3=true;
+                          if(!Ctrl_3){     
                     Thread.currentThread().interrupt();          
                     
                           }
@@ -277,8 +272,7 @@ public void check_state(String s) throws InterruptedException{
                           
                           if(!Ctrl_4){
                               
-                     Ctrl_4=true;
-                    Thread.currentThread().interrupt();          
+                     Thread.currentThread().interrupt();          
                     
                           }
                          
@@ -296,7 +290,6 @@ public void check_state(String s) throws InterruptedException{
                           
                           if(!Ctrl_5){
                               
-                     Ctrl_5=true;
                     Thread.currentThread().interrupt();          
                     
                           }
@@ -315,7 +308,6 @@ public void check_state(String s) throws InterruptedException{
                           
                           if(!Ctrl_6){
                               
-                     Ctrl_6=true;
                     Thread.currentThread().interrupt();          
                     
                           }
@@ -337,14 +329,13 @@ public void check_state(String s) throws InterruptedException{
 
 ///////////////////////////////timeElapsed/////////////////////////
 public double time(){
-//    long timeElapsed=0;
+
     double x=0;
     
      if (end!=0){
      x = (end - start)/1000;
      }
-     
-    
+
     return x ;
 
 }

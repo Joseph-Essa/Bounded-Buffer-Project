@@ -1,13 +1,8 @@
 
 package pc;
 
-import java.awt.Dimension;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.util.LinkedList;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -22,11 +17,7 @@ import javax.swing.WindowConstants;
 
 
 import Producer_Consumer.consumer_producer;
-import Producer_Consumer.buffer;
-import Semaphore.Mysemaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import struture.QueueX;
+
 
 
 /**
@@ -45,25 +36,35 @@ public class pc extends Thread{
 		public static void main(String[] args) throws InterruptedException {
                 
 //////////////////* Creating the frame and the panel *////////////////////////
+
 			JFrame frame = new JFrame("test");
 			JPanel panel = new JPanel();
                         panel.setBackground(new java.awt.Color(0, 120, 212));
+                        
 //////////////////* creating the labels */////////////////////////////////////
-//                       
-//                        JLabel icon = new JLabel();
-//                        icon.setBounds(0, 0,130,120);
-//                        icon.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\test_3\\src\\icons\\صورة3.png"));
-//			 JLabel icon2 = new JLabel();
-//                        icon2.setBounds(10, 390, 130, 130);
-//                        icon2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\test_3\\src\\icons\\6.png"));
-//			 JLabel icon3 = new JLabel();
-//                        icon3.setBounds(400, 110, 140, 130);
-//                        icon3.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\test_3\\src\\icons\\7.png"));                        
-//			 JLabel icon4 = new JLabel();
-//                        icon4.setBounds(400, 480, 130, 130);
-//                        icon4.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\test_3\\src\\icons\\8.png"));
+                    //////////////////icons//////////////////////   
+                        JLabel icon = new JLabel();
+                        icon.setBounds(50,180,110, 60);
+                        icon.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\صورة1.png"));
+                        
+			JLabel icon2 = new JLabel();
+                        icon2.setBounds(560,180,110, 60);
+                        icon2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\صورة1.png"));
+                        
+			 JLabel icon3 = new JLabel();
+                        icon3.setBounds(590,455,170,30);
+                        icon3.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\boo.png"));
 
+			 JLabel icon4 = new JLabel();
+                        icon4.setBounds(590,500,170,30);
+                        icon4.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\boo.png"));
 
+                        JLabel icon5 = new JLabel();
+                        icon5.setBounds(590,550,170,30);
+                        icon5.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\صورة2.png"));
+
+                                   //////////////////lables//////////////////////
+                        
                         JLabel N_of_elements = new JLabel("consumer 1 ");
 			N_of_elements.setBounds(20, 250,110, 40);
                         N_of_elements.setFont(new java.awt.Font("Tahoma", 0, 20));
@@ -130,7 +131,7 @@ public class pc extends Thread{
 			mess.setBounds(320, 0, 360, 80);
 			mess.setFont(new java.awt.Font("Tahoma", 0, 36));
                         
-                        JLabel mess2 = new JLabel(" Enter Ticket Number");
+                        JLabel mess2 = new JLabel(" Enter Tickets Number");
 			mess2.setBounds(30,30,210,30);
 			mess2.setFont(new java.awt.Font("Tahoma", 0, 20));
                         
@@ -145,7 +146,7 @@ public class pc extends Thread{
 			Button.setText("    Start Threads ");
 			Button.setBounds(350,90,280,60);
                         Button.setFont(new java.awt.Font("Tahoma", 0, 22));
-                        Button.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\th.png")); // NOI18N
+                        Button.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\th.png")); // NOI18N
                         Button.setBackground(new java.awt.Color(0, 120, 212));
                         Button.setContentAreaFilled(false);
                         Button.setDefaultCapable(false);
@@ -156,11 +157,10 @@ public class pc extends Thread{
                         Button1.setText("Exit");
                         Button1.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button1.setBounds(30,520,110,40);
-                        Button1.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
+                        Button1.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Git\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
                         Button1.addActionListener(f -> {System.exit(0);});
                         Button1.setContentAreaFilled(false);
                         Button1.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button1.setFocusable(false);
 
                         
@@ -170,22 +170,16 @@ public class pc extends Thread{
                         Button2.setText("Stop 1");
                         Button2.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button2.setBounds(700,60,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button2.setContentAreaFilled(false);
                         Button2.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button2.setFocusable(false);
                         
                         JButton Button3 = new JButton();
                         Button3.setText("Stop 2");
                         Button3.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button3.setBounds(800,60,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button3.setContentAreaFilled(false);
                         Button3.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button3.setFocusable(false);
 
                         
@@ -193,11 +187,8 @@ public class pc extends Thread{
                         Button4.setText("Stop 3");
                         Button4.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button4.setBounds(910,60,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button4.setContentAreaFilled(false);
                         Button4.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button4.setFocusable(false);
                         
                         
@@ -205,11 +196,8 @@ public class pc extends Thread{
                         Button5.setText("Stop 4");
                         Button5.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button5.setBounds(700,110,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button5.setContentAreaFilled(false);
                         Button5.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button5.setFocusable(false);
                         
                         
@@ -217,11 +205,8 @@ public class pc extends Thread{
                         Button6.setText("Stop 5");
                         Button6.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button6.setBounds(800,110,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button6.setContentAreaFilled(false);
                         Button6.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button6.setFocusable(false);
                         
                         
@@ -230,18 +215,15 @@ public class pc extends Thread{
                         Button7.setText("Stop 6");
                         Button7.setFont(new java.awt.Font("Tahoma", 0, 18));
                         Button7.setBounds(910,110,90,35);
-//                        Button2.setIcon(new javax.swing.ImageIcon("D:\\FCAI\\Year (3)\\Operating system 2\\Project\\test\\Project (with switch)_1\\src\\icons\\ee.png")); // NOI18N
-//                        Button2.addActionListener(f -> {System.exit(0);});
                         Button7.setContentAreaFilled(false);
                         Button7.setDefaultCapable(false);
-//                        Button.setFocusPainted(false);
                         Button7.setFocusable(false);
                         
-           
+                        
 /////////////* creating Textpane -input places- *///////////////////////////
+
                         JTextPane elements1 = new JTextPane();
-			elements1.setBounds(70,80,90,30);
-			
+			elements1.setBounds(70,80,90,25);
                         elements1.setFont(new java.awt.Font("Tahoma", 0, 16));			
                        
                         
@@ -389,7 +371,6 @@ public class pc extends Thread{
                         panel.add(Button5);
                         panel.add(Button6);
                         panel.add(Button7);
-//                        panel.add(Button8);
                         
 			panel.add(N_of_elements);
                         panel.add(avilable);
@@ -408,10 +389,12 @@ public class pc extends Thread{
                         panel.add(mess);
                         panel.add(mess2);
                         panel.add(mess3);
-//			  panel.add(icon);
-//                        panel.add(icon2);
-//                        panel.add(icon3);
-//                        panel.add(icon4);
+			panel.add(icon);
+                        panel.add(icon2);
+                        panel.add(icon3);
+                        panel.add(icon4);
+                        panel.add(icon5);
+                        
 /////////////* setting the frame and adding the panel *///////////////////////////
 
 			frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -431,7 +414,6 @@ public class pc extends Thread{
                                     
                                     	
 			           	elements.setText(String.valueOf(pro.mess));
-//                                        elements.setText(String.valueOf(pro.mess8));
                                         elements2.setText(String.valueOf(pro.mess2));
                                         elements3.setText(String.valueOf(pro.mess3));
                                         elements4.setText(String.valueOf(pro.mess4));
@@ -443,7 +425,6 @@ public class pc extends Thread{
                                         elements13.setText(String.valueOf(pro.c4));
                                         elements14.setText(String.valueOf(pro.c5));
                                         elements15.setText(String.valueOf(pro.c6));
-
                                         elements19.setText(String.valueOf(pro.Avilable_tik));
                                         elements20.setText(String.valueOf(pro.tik_count)); 
                                         elements21.setText(String.valueOf(pro.time())); 
@@ -454,6 +435,8 @@ public class pc extends Thread{
                                 
 			};
 /////////////*Actions done on pressing the button*///////////////////////////
+
+//////////////////////concumer Controler///////////////////
  
 Button2.addActionListener(a -> {
 
@@ -484,7 +467,7 @@ Button7.addActionListener(a -> {
     pro.Ctrl_6=false;
 });
 
-//////////////////////////////////// start threads button  ////////////////////////
+//////////////////////////////////// create start threads button  ////////////////////////
 
 Button.addActionListener(a -> {
     
@@ -626,16 +609,11 @@ Thread t8 = new Thread(new Runnable() {
                           
                                 
 			}); // End Of Button
-
-////////////////////////////Start Again/////////////////
-
-
-                                
-                        
-                                                   
+                                 
 		}// End of Main
                 
 	}// End of Class GUI
+        
 }// End of Class pc
 
 

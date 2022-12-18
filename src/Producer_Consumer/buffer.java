@@ -1,8 +1,5 @@
 package Producer_Consumer;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.nio.charset.Charset;
 
 import Semaphore.Mysemaphore;
 
@@ -14,10 +11,10 @@ import Semaphore.Mysemaphore;
 
 public class buffer {
        
-	public int size ; //buffer size
+	public int size ; 
 	private int store[];
-	private int head ; //head
-	private int tail ;  //tail
+	private int head ; 
+	private int tail ;  
 	
         public int Max;
 	Mysemaphore empty;
@@ -26,16 +23,7 @@ public class buffer {
 
 ///////////////////////*Constructors*///////////////////////
 	
-//	public buffer(buffer buff)// Copy Constructor
-//	{
-//		size = buff.size;
-//		empty = new Mysemaphore(size);
-//		full = new Mysemaphore(0);
-//		mutex = new Mysemaphore(1);
-//		store = new int[size];
-//	}
-
-	public buffer(int size) // Parameterized constructor // the buffer bound
+	public buffer(int size)
 	{
 		Max = size;
 		empty = new Mysemaphore(Max);
