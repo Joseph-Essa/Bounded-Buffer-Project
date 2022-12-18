@@ -23,12 +23,7 @@ Develop and application for musical instruments:
 - Interactive Piano with Equlizer for frequency range
 - Interactive Guitar 
 ---
-### Demos
----
-- Open audio file
-- Real Time Plotting for music file
-- Spectrogram for Real Time plotting
-- Real Time Equlizer for 3 instrument with frequency range and Spectrogram
+
 ---
 -Interactive Drum with Equlizer for frequency range:-
 ---
