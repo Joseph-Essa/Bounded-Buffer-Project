@@ -24,12 +24,12 @@ Develop and application for musical instruments:
 ---
 
 ---
--Interactive Drum with Equlizer for frequency range:-
+-control ALL consumer:-
 ---
 ![](https://github.com/Joseph-Essa/Bounded-Buffer-Project/blob/main/Gifs/Animation.gif)
 
 ---
--Interactive Drum with Equlizer for frequency range:-
+-Free From Deadlock and Starvation :-
 ---
 ![](https://github.com/Joseph-Essa/Bounded-Buffer-Project/blob/main/Gifs/Animation1.gif)
 
