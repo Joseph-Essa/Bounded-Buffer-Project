@@ -6,7 +6,6 @@ Producer Consumer (Bounded Buffer) With JAVA Multithreading (JAVA Swing)
 You're sections headers will be used to reference location of destination.
 
 - [Features](#Features)
-- [Demos](#Demos)
 - [Tools](#Tools)
 - [Team](#Team)
 ---
@@ -15,13 +14,13 @@ You're sections headers will be used to reference location of destination.
 
 Develop and application for musical instruments: 
 
-- Open audio file
-- Real Time Plotting for music file
-- Spectrogram for Real Time plotting
-- Real Time Equlizer for 3 instrument with frequency range and Spectrogram
-- Interactive Drum with Equlizer for frequency range
-- Interactive Piano with Equlizer for frequency range
-- Interactive Guitar 
+- Free From Deadlock
+- Free From Starvation
+- Choice number of tickets
+- Show number of Available And Booked tickets
+- Show Time Elapsed
+- control consumer
+
 ---
 
 ---
@@ -41,9 +40,13 @@ Develop and application for musical instruments:
 ----
 ### Team
 ----
--1) Joseph Essa
--2) 
--3)
+-1) Joseph Essa (202000240)
+-2) Thomas Fathy Shehata (202000232) 
+-3) Merola Milad (201900874)
+-4) Marina Ezzat Louis (202000699) 
+-5) Amira Wael Amir (202000163)
+-6) John Halim Hanna (202000242)
+-7) Mayer Rida (202000711)
 
 ----
 
