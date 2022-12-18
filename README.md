@@ -41,7 +41,9 @@ Develop and application for musical instruments:
 ### Team
 ----
 -1) Joseph Essa (202000240)
--2) Thomas Fathy Shehata (202000232) 
+
+-2) Thomas Fathy Shehata (202000232)
+
 -3) Merola Milad (201900874)
 -4) Marina Ezzat Louis (202000699) 
 -5) Amira Wael Amir (202000163)
