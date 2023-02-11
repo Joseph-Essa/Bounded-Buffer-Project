@@ -7,12 +7,12 @@ You're sections headers will be used to reference location of destination.
 
 - [Features](#Features)
 - [Tools](#Tools)
-- [Team](#Team)
+
 ---
 
 ## Features
 
-Develop and application for musical instruments: 
+Develop and application for Producer Consumer problem: 
 
 - Free From Deadlock
 - Free From Starvation
