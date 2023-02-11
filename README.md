@@ -38,21 +38,7 @@ Develop and application for musical instruments:
 ----
 - Java
 ----
-### Team
-----
--1) Joseph Essa (202000240)
 
--2) Thomas Fathy Shehata (202000232)
-
--3) Merola Milad (201900874)
-
--4) Marina Ezzat Louis (202000699) 
-
--5) Amira Wael Amir (202000163)
-
--6) John Halim Hanna (202000242)
-
--7) Mayer Rida (202000711)
 
 ----
 
